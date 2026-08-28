@@ -1,0 +1,156 @@
+{
+  "metadata": {
+    "model": "deepseek-v4-pro:0813-cloud",
+    "num_predict": 1,
+    "repeat_count": 3,
+    "timestamp": "2026-08-28T18:48:12.062007"
+  },
+  "groups": [
+    {
+      "text_label": "P1",
+      "group": "cache miss",
+      "num_predict": 1,
+      "cap": 100,
+      "q5h_before": 0,
+      "qweek_before": 58.3,
+      "q5h_after": 9.0,
+      "qweek_after": 59.9,
+      "delta5h": 9.0,
+      "deltaweek": 1.6,
+      "settle_delta5h": 0.0,
+      "settle_deltaweek": 0.0,
+      "valid5h": true,
+      "requests": [
+        {
+          "uuid": "7837f075-9fbd-4c0c-83f2-a73ac9176440",
+          "prompt_eval_count": 91118,
+          "eval_count": 1,
+          "total_duration": 4567935195,
+          "q5h_before": 0,
+          "qweek_before": 58.3,
+          "q5h_after": 1.5,
+          "qweek_after": 58.6,
+          "delta5h": 1.5,
+          "deltaweek": 0.3,
+          "valid5h": true,
+          "timestamp": "2026-08-28T18:34:00.403756"
+        },
+        {
+          "uuid": "cbfe2c99-8fc0-49f4-ab11-1eff4b5d68c2",
+          "prompt_eval_count": 91120,
+          "eval_count": 1,
+          "total_duration": 4751862008,
+          "q5h_before": 1.5,
+          "qweek_before": 58.6,
+          "q5h_after": 3.0,
+          "qweek_after": 58.8,
+          "delta5h": 1.5,
+          "deltaweek": 0.2,
+          "valid5h": true,
+          "timestamp": "2026-08-28T18:34:06.159858"
+        },
+        {
+          "uuid": "deefa0f0-4885-44c7-8edc-357a220d1147",
+          "prompt_eval_count": 91118,
+          "eval_count": 1,
+          "total_duration": 19323753930,
+          "q5h_before": 3.0,
+          "qweek_before": 58.8,
+          "q5h_after": 4.5,
+          "qweek_after": 59.1,
+          "delta5h": 1.5,
+          "deltaweek": 0.3,
+          "valid5h": true,
+          "timestamp": "2026-08-28T18:34:26.411642"
+        },
+        {
+          "uuid": "2caffbdc-2021-4588-b01f-9d2cd9481947",
+          "prompt_eval_count": 91117,
+          "eval_count": 1,
+          "total_duration": 9212212000,
+          "q5h_before": 4.5,
+          "qweek_before": 59.1,
+          "q5h_after": 6.0,
+          "qweek_after": 59.4,
+          "delta5h": 1.5,
+          "deltaweek": 0.3,
+          "valid5h": true,
+          "timestamp": "2026-08-28T18:34:36.573781"
+        },
+        {
+          "uuid": "12eebd25-7cfb-4b91-9414-c7e94a7f7ec9",
+          "prompt_eval_count": 91121,
+          "eval_count": 1,
+          "total_duration": 5204131098,
+          "q5h_before": 6.0,
+          "qweek_before": 59.4,
+          "q5h_after": 7.5,
+          "qweek_after": 59.6,
+          "delta5h": 1.5,
+          "deltaweek": 0.2,
+          "valid5h": true,
+          "timestamp": "2026-08-28T18:34:42.693688"
+        },
+        {
+          "uuid": "d1e25558-32de-4e26-adef-26df0b5a422c",
+          "prompt_eval_count": 91117,
+          "eval_count": 1,
+          "total_duration": 4535450428,
+          "q5h_before": 7.5,
+          "qweek_before": 59.6,
+          "q5h_after": 9.0,
+          "qweek_after": 59.9,
+          "delta5h": 1.5,
+          "deltaweek": 0.3,
+          "valid5h": true,
+          "timestamp": "2026-08-28T18:34:47.969029"
+        }
+      ]
+    },
+    {
+      "text_label": "P2",
+      "group": "cache miss",
+      "num_predict": 1,
+      "cap": 20,
+      "q5h_before": 17.2,
+      "qweek_before": 61.4,
+      "q5h_after": 30.9,
+      "qweek_after": 63.8,
+      "delta5h": 13.7,
+      "deltaweek": 2.4,
+      "settle_delta5h": 0.0,
+      "settle_deltaweek": 0.0,
+      "valid5h": true,
+      "requests": [
+        {
+          "uuid": "4ecb7e84-cebf-4465-b90d-75c74075182d",
+          "prompt_eval_count": 416187,
+          "eval_count": 1,
+          "total_duration": 22808150582,
+          "q5h_before": 17.2,
+          "qweek_before": 61.4,
+          "q5h_after": 24.0,
+          "qweek_after": 62.6,
+          "delta5h": 6.8,
+          "deltaweek": 1.2,
+          "valid5h": true,
+          "timestamp": "2026-08-28T18:42:15.504860"
+        },
+        {
+          "uuid": "d249ec6a-6dbc-47c8-9da2-2825dd573905",
+          "prompt_eval_count": 416187,
+          "eval_count": 1,
+          "total_duration": 26969617886,
+          "q5h_before": 24.0,
+          "qweek_before": 62.6,
+          "q5h_after": 30.9,
+          "qweek_after": 63.8,
+          "delta5h": 6.9,
+          "deltaweek": 1.2,
+          "valid5h": true,
+          "timestamp": "2026-08-28T18:42:43.746638"
+        }
+      ]
+    }
+  ]
+}

@@ -6,7 +6,7 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 # --- API ---
-MODEL = "glm-5.2:cloud"
+MODEL = "minimax-m3:cloud"
 HOST = "https://ollama.com"
 
 # --- Paths ---
@@ -32,7 +32,7 @@ TEXT_PROFILES = (SMALL, LARGE)
 NUM_PREDICT_CACHE = 1        # near-zero output, so quota spend reflects input
 NUM_PREDICT_OUTPUT = 10000   # large output, so quota spend reflects output
 TARGET_WEEK = 1.5            # goal: accumulate weekly delta >= 0.5%
-OUTPUT_CAP = 100              # request cap for the output probe
+OUTPUT_CAP = 200              # request cap for the output probe
 REPEAT_COUNT = 5             # how many times each text is repeated in a prompt
 
 # --- Subscription economics ---
