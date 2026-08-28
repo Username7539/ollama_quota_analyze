@@ -1,5 +1,7 @@
 """Pricing analysis: errors, linearity, ratio, and dollar prices."""
 
+import math
+
 from config import (HIT_PATH, MISS_PATH, OUTPUT_PATH, PRICE_PER_PCT_WEEK)
 from jsonio import load_json
 
@@ -12,10 +14,10 @@ def _groups(data):
 
 
 def _rel_err(delta, G=1):
-    """Relative error of a delta (or pooled sum of G deltas)."""
+    """Relative error of a pooled sum of G independent deltas.    """
     if delta == 0:
         return float("inf")
-    return DELTA_ERR * G / abs(delta)
+    return DELTA_ERR * math.sqrt(G) / abs(delta)
 
 
 def group_errors(data, tag):
@@ -85,7 +87,7 @@ def check_ratio(miss, hit, out):
         r = d5 / dw
         err5h = _rel_err(d5, G)
         errweek = _rel_err(dw, G)
-        err_r = err5h + errweek
+        err_r = math.hypot(err5h, errweek)
         rs.append(r)
         print(f"  {tag}: r={r:.2f}  err=+/-{err_r:.0%}  "
               f"range=[{r*(1-err_r):.2f}, {r*(1+err_r):.2f}]")
@@ -99,7 +101,7 @@ def check_ratio(miss, hit, out):
     d5_all = sum(g["delta5h"] for d in [miss, hit, out] for g in _groups(d))
     dw_all = sum(g["deltaweek"] for d in [miss, hit, out] for g in _groups(d))
     r_val = d5_all / dw_all
-    err_r = _rel_err(d5_all, G_all) + _rel_err(dw_all, G_all)
+    err_r = math.hypot(_rel_err(d5_all, G_all), _rel_err(dw_all, G_all))
     print(f"  pooled: r={r_val:.2f}  err=+/-{err_r:.0%}")
     print()
 
@@ -129,7 +131,9 @@ def compute_prices(miss, hit, out):
     total_eval = sum(r["eval_count"] for g in groups
                      for r in g["requests"])
     c = (dw - a * total_pec) / total_eval
-    err_c = _rel_err(dw, G)
+    err_dw_abs = DELTA_ERR * math.sqrt(G)
+    err_in_abs = err_a * abs(a * total_pec)
+    err_c = math.hypot(err_dw_abs, err_in_abs) / abs(dw - a * total_pec)
 
     print(f"  b/a = {b/a:.1%}  (cache discount = {1 - b/a:.1%})")
     print(f"  c/a = {c/a:.2f}  (output vs input)")

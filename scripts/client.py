@@ -23,24 +23,16 @@ def make_client():
 
 def send_request(client, user_content, num_predict,
                  retries=RETRIES, delay=RETRY_DELAY):
-    """Send one chat request; temperature 0 for reproducibility.
-
-    Retries on a non-200 response or raised exception up to `retries` times,
-    waiting `delay` seconds between attempts. Raises on final failure.
-    """
+    """Send one chat request; temperature 0 for reproducibility."""
     last_err = None
     for attempt in range(1, retries + 1):
         try:
-            resp = client.chat(
+            return client.chat(
                 model=MODEL,
                 messages=[{"role": "user", "content": user_content}],
                 stream=False,
                 options={"num_predict": num_predict, "temperature": 0},
             )
-            status = getattr(resp, "status", 200)
-            if status == 200:
-                return resp
-            last_err = f"status {status}"
         except Exception as e:
             last_err = f"{type(e).__name__}: {e}"
         print(f"    request failed ({last_err}); "

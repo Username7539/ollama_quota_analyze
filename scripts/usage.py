@@ -52,5 +52,5 @@ def next_session_reset(now=None, epoch_ts=1786535700, period=5 * 3600):
     """
     if now is None:
         now = time.time()
-    k = math.ceil((now - epoch_ts) / period)
+    k = math.floor((now - epoch_ts) / period) + 1
     return epoch_ts + k * period
