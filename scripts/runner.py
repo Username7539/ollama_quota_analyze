@@ -15,6 +15,11 @@ from config import TARGET_WEEK
 from usage import next_session_reset, read_quota
 
 
+def _delta(after, before):
+    """Quota delta rounded to 1 decimal (meter quantum is 0.1%)."""
+    return round(after - before, 1)
+
+
 def _seconds_to_session_reset():
     return max(0.0, next_session_reset() - time.time())
 
@@ -51,8 +56,8 @@ def run_group(client, *, label, group_name, num_predict, cap, make_content,
         sent += 1
 
         q5h_after, qweek_after = read_quota(api_key)
-        delta5h = q5h_after - q5h_last
-        deltaweek = qweek_after - qweek_last
+        delta5h = _delta(q5h_after, q5h_last)
+        deltaweek = _delta(qweek_after, qweek_last)
         req = {
             "uuid": uid,
             "prompt_eval_count": resp.prompt_eval_count,
@@ -71,9 +76,9 @@ def run_group(client, *, label, group_name, num_predict, cap, make_content,
         print(f"    d5h={delta5h:+.3f}% dweek={deltaweek:+.3f}%")
         q5h_last, qweek_last = q5h_after, qweek_after
 
-        if qweek_after - qweek_start >= TARGET_WEEK:
+        if _delta(qweek_after, qweek_start) >= TARGET_WEEK:
             print(f"    Target reached: "
-                  f"dweek={qweek_after - qweek_start}% >= {TARGET_WEEK}%")
+                  f"dweek={_delta(qweek_after, qweek_start)}% >= {TARGET_WEEK}%")
             break
 
     # One settled reading absorbs the meter lag of the final requests.
@@ -81,8 +86,8 @@ def run_group(client, *, label, group_name, num_predict, cap, make_content,
     # deltas stay honest; group totals include it for pricing accuracy.
     time.sleep(60)
     q5h_settled, qweek_settled = read_quota(api_key)
-    settle_delta5h = q5h_settled - q5h_last
-    settle_deltaweek = qweek_settled - qweek_last
+    settle_delta5h = _delta(q5h_settled, q5h_last)
+    settle_deltaweek = _delta(qweek_settled, qweek_last)
     if settle_deltaweek != 0 or settle_delta5h != 0:
         print(f"    final settle: d5h {q5h_last:+.3f} -> {q5h_settled:+.3f} "
               f"(+{settle_delta5h:+.3f}), "
@@ -99,10 +104,10 @@ def run_group(client, *, label, group_name, num_predict, cap, make_content,
         "qweek_before": qweek_start,
         "q5h_after": q5h_last,
         "qweek_after": qweek_last,
-        "delta5h": q5h_last - q5h_start,
-        "deltaweek": qweek_last - qweek_start,
+        "delta5h": _delta(q5h_last, q5h_start),
+        "deltaweek": _delta(qweek_last, qweek_start),
         "settle_delta5h": settle_delta5h,
         "settle_deltaweek": settle_deltaweek,
-        "valid5h": (q5h_last - q5h_start) >= 0,
+        "valid5h": _delta(q5h_last, q5h_start) >= 0,
         "requests": requests,
     }

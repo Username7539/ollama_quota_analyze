@@ -33,10 +33,15 @@ def fetch_usage(api_key=None):
 
 
 def read_quota(api_key=None):
-    """Return (session_used, weekly_used) as percentages (0-100)."""
+    """Return (session_used, weekly_used) as percentages (0-100).
+
+    Both meters quantise at 0.1%, so round to 1 decimal to strip float noise.
+    """
     data = fetch_usage(api_key)
     limits = data["limits"]
-    return limits["session"]["usage"] * 100, limits["weekly"]["usage"] * 100
+    session = round(limits["session"]["usage"] * 100, 1)
+    weekly = round(limits["weekly"]["usage"] * 100, 1)
+    return session, weekly
 
 
 def next_session_reset(now=None, epoch_ts=1786535700, period=5 * 3600):
