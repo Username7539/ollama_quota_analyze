@@ -1,0 +1,7 @@
+.env
+__pycache__/
+*.pyc
+logs/
+base_scripts
+skills/
+docs/

@@ -1,0 +1,51 @@
+{
+    "name": "ollama_analyze",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."             
+    },
+
+    "remoteUser": "devuser",
+    "workspaceFolder": "/project",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/project,type=bind",
+    "overrideCommand": true,
+
+    "runArgs": [
+        "--name=ollama_analyze",
+        "--security-opt=no-new-privileges:true",
+        "--cap-drop=ALL",
+        "--network=internal_proxy_prox_internal",
+        "--dns=192.0.2.1"
+    ],
+
+    "containerEnv": {
+        "HTTP_PROXY": "http://egress-proxy:3128",
+        "HTTPS_PROXY": "http://egress-proxy:3128",
+        "http_proxy": "http://egress-proxy:3128",
+        "https_proxy": "http://egress-proxy:3128",
+        "NO_PROXY": "localhost,127.0.0.1,egress-proxy",
+        "no_proxy": "localhost,127.0.0.1,egress-proxy"
+    },
+
+    
+    "forwardPorts": [],
+    "otherPortsAttributes": {
+        "onAutoForward": "ignore"
+    },
+
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "kilocode.kilo-code"
+            ]
+        }
+    },
+
+    "mounts":[
+    "source=${localWorkspaceFolder}/.devcontainer,target=/project/.devcontainer,type=bind,readonly",
+    "source=${localWorkspaceFolder}/.git/hooks,target=/project/.git/hooks,type=bind,readonly",
+    "source=${localWorkspaceFolder}/.vscode,target=/project/.vscode,type=bind,readonly",
+    "source=${localWorkspaceFolder}/requirements.txt,target=/project/requirements.txt,type=bind,readonly"
+    ]
+}
