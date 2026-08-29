@@ -1,0 +1,56 @@
+=== miss ===
+  P1/cache miss:
+    5h:    delta=9.0%  rel_err=2.2%
+    week:  delta=1.6%  rel_err=12.5%
+  P2/cache miss:
+    5h:    delta=13.7%  rel_err=1.5%
+    week:  delta=2.4%  rel_err=8.3%
+  pooled (G=2):
+    5h:    sum=22.7%  rel_err=1.2%
+    week:  sum=4.0%  rel_err=7.1%
+
+=== hit ===
+  P1/cache hit:
+    5h:    delta=8.2%  rel_err=2.4%
+    week:  delta=1.5%  rel_err=13.3%
+  P2/cache hit:
+    5h:    delta=8.4%  rel_err=2.4%
+    week:  delta=1.5%  rel_err=13.3%
+  pooled (G=2):
+    5h:    sum=16.6%  rel_err=1.7%
+    week:  sum=3.0%  rel_err=9.4%
+
+=== output ===
+  output/output probe:
+    5h:    delta=8.5%  rel_err=2.4%
+    week:  delta=1.5%  rel_err=13.3%
+  pooled (G=1):
+    5h:    sum=8.5%  rel_err=2.4%
+    week:  sum=1.5%  rel_err=13.3%
+
+=== linearity (miss) ===
+  P1: a=1.65e-05  delta5h=9.0%  total_pec=546711
+  P2: a=1.65e-05  delta5h=13.7%  total_pec=832374
+  spread = 0.0%  err = 1.2%
+  VERDICT: linear (spread < err)
+
+=== linearity (hit) ===
+  P1: b=5.42e-07  delta5h=8.2%  total_pec=15125422
+  P2: b=5.45e-07  delta5h=8.4%  total_pec=15398919
+  spread = 0.6%  err = 1.7%
+  VERDICT: linear (spread < err)
+
+=== ratio r = 5h / week ===
+  miss: r=5.67  err=+/-7%  range=[5.27, 6.08]
+  hit: r=5.53  err=+/-10%  range=[5.00, 6.06]
+  output: r=5.67  err=+/-14%  range=[4.90, 6.43]
+  cross-probe: min=5.53 max=5.67 spread=0.14
+  pooled: r=5.62  err=+/-5%
+
+=== prices ($/1M tokens, from weekly quota) ===
+  b/a = 3.4%  (cache discount = 96.6%)
+  c/a = 2.97  (output vs input)
+
+  A = $0.133/1M  err=+/-7%  range=[$0.124, $0.143]
+  B = $0.005/1M  err=+/-9%  range=[$0.004, $0.005]  
+  C = $0.396/1M  err=+/-13%  range=[$0.343, $0.448] ! The output token price was measured only with a small input context and may appear to be slightly higher when making requests with large input data.
