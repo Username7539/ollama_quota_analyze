@@ -57,4 +57,4 @@ logs/0output_glm-5.2-cloud.json
 
   A = $0.065/1M  err=+/-26%  range=[$0.048, $0.082]
   B = $0.014/1M  err=+/-28%  range=[$0.010, $0.018]
-  C = $0.256/1M  err=+/-40%  range=[$0.153, $0.359]
+  C = $0.256/1M  err=+/-40%  range=[$0.153, $0.359] ! The output token price was measured only with a small input context and may appear to be slightly higher when making requests with large input data.
