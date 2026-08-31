@@ -1,3 +1,7 @@
+logs/hit_glm-5.2-cloud.json
+logs/miss_glm-5.2-cloud.json
+logs/output_glm-5.2-cloud.json
+
 === miss ===
   P1/cache miss:
     5h:    delta=9.2%  rel_err=2.2%

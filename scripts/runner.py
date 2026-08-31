@@ -84,7 +84,7 @@ def run_group(client, *, label, group_name, num_predict, cap, make_content,
     # One settled reading absorbs the meter lag of the final requests.
     # The lag is kept separate (not attributed to any request) so per-request
     # deltas stay honest; group totals include it for pricing accuracy.
-    time.sleep(60)
+    time.sleep(20)
     q5h_settled, qweek_settled = read_quota(api_key)
     settle_delta5h = _delta(q5h_settled, q5h_last)
     settle_deltaweek = _delta(qweek_settled, qweek_last)

@@ -6,7 +6,7 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 # --- API ---
-MODEL = "minimax-m3:cloud"
+MODEL = "glm-5.3:cloud"
 HOST = "https://ollama.com"
 
 # --- Paths ---

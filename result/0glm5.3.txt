@@ -1,0 +1,60 @@
+logs/0hit_glm-5.3-cloud.json
+logs/0miss_glm-5.3-cloud.json
+logs/0output_glm-5.3-cloud.json
+
+=== miss ===
+  P1/cache miss:
+    5h:    delta=11.9%  rel_err=1.7%
+    week:  delta=2.1%  rel_err=9.5%
+  P2/cache miss:
+    5h:    delta=12.0%  rel_err=1.7%
+    week:  delta=2.2%  rel_err=9.1%
+  pooled (G=2):
+    5h:    sum=23.9%  rel_err=1.2%
+    week:  sum=4.3%  rel_err=6.6%
+
+=== hit ===
+  P1/cache hit:
+    5h:    delta=8.8%  rel_err=2.3%
+    week:  delta=1.5%  rel_err=13.3%
+  P2/cache hit:
+    5h:    delta=9.7%  rel_err=2.1%
+    week:  delta=1.7%  rel_err=11.8%
+  pooled (G=2):
+    5h:    sum=18.5%  rel_err=1.5%
+    week:  sum=3.2%  rel_err=8.8%
+
+=== output ===
+  output/output probe:
+    5h:    delta=8.8%  rel_err=2.3%
+    week:  delta=1.5%  rel_err=13.3%
+  pooled (G=1):
+    5h:    sum=8.8%  rel_err=2.3%
+    week:  sum=1.5%  rel_err=13.3%
+
+=== linearity (miss) ===
+  P1: a=2.61e-05  delta5h=11.9%  total_pec=456593
+  P2: a=1.75e-05  delta5h=12.0%  total_pec=686623
+  spread = 39.4%  err = 1.2%
+  VERDICT: non-linear (spread > err)
+
+=== linearity (hit) ===
+  P1: b=4.82e-06  delta5h=8.8%  total_pec=1826364
+  P2: b=3.53e-06  delta5h=9.7%  total_pec=2746492
+  spread = 30.8%  err = 1.5%
+  VERDICT: non-linear (spread > err)
+
+=== ratio r = 5h / week ===
+  miss: r=5.56  err=+/-7%  range=[5.19, 5.93]
+  hit: r=5.78  err=+/-9%  range=[5.26, 6.30]
+  output: r=5.87  err=+/-14%  range=[5.07, 6.66]
+  cross-probe: min=5.56 max=5.87 spread=0.31
+  pooled: r=5.69  err=+/-5%
+
+=== prices ($/1M tokens, from weekly quota) ===
+  b/a = 18.6%  (cache discount = 81.4%)
+  c/a = 2.48  (output vs input)
+
+  A = $0.173/1M  err=+/-7%  range=[$0.161, $0.184]
+  B = $0.032/1M  err=+/-9%  range=[$0.029, $0.035] !!! In the collected cache hit data, there is a small outlier. The cache hit price may be slightly inflated compared to the actual value.
+  C = $0.429/1M  err=+/-13%  range=[$0.371, $0.486] ! The output token price was measured only with a small input context and may appear to be slightly higher when making requests with large input data.

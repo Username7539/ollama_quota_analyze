@@ -1,0 +1,60 @@
+logs/0hit_glm-5.2-cloud.json
+logs/0miss_glm-5.2-cloud.json
+logs/0output_glm-5.2-cloud.json
+
+=== miss ===
+  P1/cache miss:
+    5h:    delta=3.2%  rel_err=6.2%
+    week:  delta=0.5%  rel_err=40.0%
+  P2/cache miss:
+    5h:    delta=3.6%  rel_err=5.6%
+    week:  delta=0.6%  rel_err=33.3%
+  pooled (G=2):
+    5h:    sum=6.8%  rel_err=4.2%
+    week:  sum=1.1%  rel_err=25.7%
+
+=== hit ===
+  P1/cache hit:
+    5h:    delta=2.5%  rel_err=8.0%
+    week:  delta=0.5%  rel_err=40.0%
+  P2/cache hit:
+    5h:    delta=2.6%  rel_err=7.7%
+    week:  delta=0.5%  rel_err=40.0%
+  pooled (G=2):
+    5h:    sum=5.1%  rel_err=5.5%
+    week:  sum=1.0%  rel_err=28.3%
+
+=== output ===
+  output/output probe:
+    5h:    delta=2.4%  rel_err=8.3%
+    week:  delta=0.5%  rel_err=40.0%
+  pooled (G=1):
+    5h:    sum=2.4%  rel_err=8.3%
+    week:  sum=0.5%  rel_err=40.0%
+
+=== linearity (miss) ===
+  P1: a=8.76e-06  delta5h=3.2%  total_pec=365338
+  P2: a=8.74e-06  delta5h=3.6%  total_pec=411992
+  spread = 0.2%  err = 4.2%
+  VERDICT: linear (spread < err)
+
+=== linearity (hit) ===
+  P1: b=1.61e-06  delta5h=2.5%  total_pec=1552678
+  P2: b=1.58e-06  delta5h=2.6%  total_pec=1647968
+  spread = 2.0%  err = 5.5%
+  VERDICT: linear (spread < err)
+
+=== ratio r = 5h / week ===
+  miss: r=6.18  err=+/-26%  range=[4.57, 7.79]
+  hit: r=5.10  err=+/-29%  range=[3.63, 6.57]
+  output: r=4.80  err=+/-41%  range=[2.84, 6.76]
+  cross-probe: min=4.80 max=6.18 spread=1.38
+  pooled: r=5.50  err=+/-17%
+
+=== prices ($/1M tokens, from weekly quota) ===
+  b/a = 22.1%  (cache discount = 77.9%)
+  c/a = 3.94  (output vs input)
+
+  A = $0.065/1M  err=+/-26%  range=[$0.048, $0.082]
+  B = $0.014/1M  err=+/-28%  range=[$0.010, $0.018]
+  C = $0.256/1M  err=+/-40%  range=[$0.153, $0.359]

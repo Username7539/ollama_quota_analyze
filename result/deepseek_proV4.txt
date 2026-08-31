@@ -1,3 +1,7 @@
+logs/hit_deepseek-v4-pro-0813-cloud.json
+logs/miss_deepseek-v4-pro-0813-cloud.json
+logs/output_deepseek-v4-pro-0813-cloud.json
+
 === miss ===
   P1/cache miss:
     5h:    delta=9.0%  rel_err=2.2%
