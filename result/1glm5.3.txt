@@ -1,6 +1,6 @@
-logs/hit_glm-5.3-cloud.json
-logs/miss_glm-5.3-cloud.json
-logs/output_glm-5.3-cloud.json
+logs/1hit_glm-5.3-cloud.json
+logs/1miss_glm-5.3-cloud.json
+logs/1output_glm-5.3-cloud.json
 
 === miss ===
   P1/cache miss:
@@ -26,30 +26,30 @@ logs/output_glm-5.3-cloud.json
 
 === output ===
   output/output probe:
-    5h:    delta=8.2%  rel_err=2.4%
+    5h:    delta=8.3%  rel_err=2.4%
     week:  delta=1.5%  rel_err=13.3%
   pooled (G=1):
-    5h:    sum=8.2%  rel_err=2.4%
+    5h:    sum=8.3%  rel_err=2.4%
     week:  sum=1.5%  rel_err=13.3%
 
 === linearity (miss) ===
-  P1: a=1.30e-05  delta5h=9.9%  total_pec=761000
-  P2: a=1.30e-05  delta5h=8.9%  total_pec=686624
+  P1: a=1.30e-05  delta5h=9.9%  total_pec=760995
+  P2: a=1.30e-05  delta5h=8.9%  total_pec=686625
   spread = 0.4%  err = 1.5%
   VERDICT: linear (spread < err)
 
 === linearity (hit) ===
-  P1: b=2.43e-06  delta5h=8.5%  total_pec=3500554
-  P2: b=2.42e-06  delta5h=8.3%  total_pec=3433120
+  P1: b=2.43e-06  delta5h=8.5%  total_pec=3500577
+  P2: b=2.42e-06  delta5h=8.3%  total_pec=3433125
   spread = 0.4%  err = 1.7%
   VERDICT: linear (spread < err)
 
 === ratio r = 5h / week ===
   miss: r=5.70  err=+/-9%  range=[5.20, 6.19]
   hit: r=5.60  err=+/-10%  range=[5.06, 6.14]
-  output: r=5.47  err=+/-14%  range=[4.73, 6.21]
-  cross-probe: min=5.47 max=5.70 spread=0.23
-  pooled: r=5.62  err=+/-6%
+  output: r=5.53  err=+/-14%  range=[4.78, 6.28]
+  cross-probe: min=5.53 max=5.70 spread=0.16
+  pooled: r=5.63  err=+/-6%
 
 === prices ($/1M tokens, from weekly quota) ===
   b/a = 19.0%  (cache discount = 81.0%)

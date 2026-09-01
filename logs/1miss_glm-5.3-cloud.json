@@ -3,7 +3,7 @@
     "model": "glm-5.3:cloud",
     "num_predict": 1,
     "repeat_count": 5,
-    "timestamp": "2026-09-01T09:32:54.828609"
+    "timestamp": "2026-08-31T12:54:27.157559"
   },
   "groups": [
     {
@@ -12,9 +12,9 @@
       "num_predict": 1,
       "cap": 100,
       "q5h_before": 0,
-      "qweek_before": 8.0,
+      "qweek_before": 0,
       "q5h_after": 9.9,
-      "qweek_after": 9.8,
+      "qweek_after": 1.8,
       "delta5h": 9.9,
       "deltaweek": 1.8,
       "settle_delta5h": 0.0,
@@ -22,74 +22,74 @@
       "valid5h": true,
       "requests": [
         {
-          "uuid": "2ecfa6b2-6039-4ced-bce6-c7917c63f654",
-          "prompt_eval_count": 152199,
+          "uuid": "0ba48061-287c-45af-bd91-fc627be5e8e0",
+          "prompt_eval_count": 152198,
           "eval_count": 1,
-          "total_duration": 10281200411,
+          "total_duration": 10335113215,
           "q5h_before": 0,
-          "qweek_before": 8.0,
+          "qweek_before": 0,
           "q5h_after": 2.0,
-          "qweek_after": 8.4,
+          "qweek_after": 0.4,
           "delta5h": 2.0,
           "deltaweek": 0.4,
           "valid5h": true,
-          "timestamp": "2026-09-01T09:27:07.446006"
+          "timestamp": "2026-08-31T12:49:05.408256"
         },
         {
-          "uuid": "10e1b7e7-6e1b-43ad-9af1-0c76577d980c",
-          "prompt_eval_count": 152203,
+          "uuid": "c14e1a90-e3aa-4b8d-97e2-f2449b3bb0f1",
+          "prompt_eval_count": 152201,
           "eval_count": 1,
-          "total_duration": 10493014678,
+          "total_duration": 10297636766,
           "q5h_before": 2.0,
-          "qweek_before": 8.4,
+          "qweek_before": 0.4,
           "q5h_after": 4.0,
-          "qweek_after": 8.7,
+          "qweek_after": 0.7,
           "delta5h": 2.0,
           "deltaweek": 0.3,
           "valid5h": true,
-          "timestamp": "2026-09-01T09:27:18.978792"
+          "timestamp": "2026-08-31T12:49:16.790260"
         },
         {
-          "uuid": "e7c3e781-1063-4098-b5a8-4465a683d1af",
-          "prompt_eval_count": 152201,
+          "uuid": "2910a47b-ede8-4f37-88d3-de44707811ab",
+          "prompt_eval_count": 152198,
           "eval_count": 1,
-          "total_duration": 9526766254,
+          "total_duration": 10356792932,
           "q5h_before": 4.0,
-          "qweek_before": 8.7,
+          "qweek_before": 0.7,
           "q5h_after": 5.9,
-          "qweek_after": 9.1,
+          "qweek_after": 1.1,
           "delta5h": 1.9,
           "deltaweek": 0.4,
           "valid5h": true,
-          "timestamp": "2026-09-01T09:27:29.481862"
+          "timestamp": "2026-08-31T12:49:28.570825"
         },
         {
-          "uuid": "486f10cb-99a5-4462-bbec-bef9b3e7313c",
+          "uuid": "1001d180-4906-46a3-9117-e747259e8242",
           "prompt_eval_count": 152199,
           "eval_count": 1,
-          "total_duration": 10521268951,
+          "total_duration": 9687716450,
           "q5h_before": 5.9,
-          "qweek_before": 9.1,
+          "qweek_before": 1.1,
           "q5h_after": 7.9,
-          "qweek_after": 9.4,
+          "qweek_after": 1.4,
           "delta5h": 2.0,
           "deltaweek": 0.3,
           "valid5h": true,
-          "timestamp": "2026-09-01T09:27:41.007903"
+          "timestamp": "2026-08-31T12:49:39.409473"
         },
         {
-          "uuid": "c412eae2-6147-4803-bd63-37ad21924d5a",
-          "prompt_eval_count": 152198,
+          "uuid": "edf26d6a-5175-4b5e-ac39-8bf301be0494",
+          "prompt_eval_count": 152199,
           "eval_count": 1,
-          "total_duration": 10554791509,
+          "total_duration": 9638456547,
           "q5h_before": 7.9,
-          "qweek_before": 9.4,
+          "qweek_before": 1.4,
           "q5h_after": 9.9,
-          "qweek_after": 9.8,
+          "qweek_after": 1.8,
           "delta5h": 2.0,
           "deltaweek": 0.4,
           "valid5h": true,
-          "timestamp": "2026-09-01T09:27:52.599281"
+          "timestamp": "2026-08-31T12:49:49.714837"
         }
       ]
     },
@@ -99,9 +99,9 @@
       "num_predict": 1,
       "cap": 20,
       "q5h_before": 18.4,
-      "qweek_before": 11.3,
+      "qweek_before": 3.3,
       "q5h_after": 27.3,
-      "qweek_after": 12.8,
+      "qweek_after": 4.8,
       "delta5h": 8.9,
       "deltaweek": 1.5,
       "settle_delta5h": 0.0,
@@ -109,18 +109,18 @@
       "valid5h": true,
       "requests": [
         {
-          "uuid": "f7578522-acba-4f03-bc2a-00cc2f4a7586",
-          "prompt_eval_count": 686624,
+          "uuid": "17d06058-6af9-43f2-81f9-ed1c7c5fdd41",
+          "prompt_eval_count": 686625,
           "eval_count": 1,
-          "total_duration": 83224293712,
+          "total_duration": 87560222234,
           "q5h_before": 18.4,
-          "qweek_before": 11.3,
+          "qweek_before": 3.3,
           "q5h_after": 27.3,
-          "qweek_after": 12.8,
+          "qweek_after": 4.8,
           "delta5h": 8.9,
           "deltaweek": 1.5,
           "valid5h": true,
-          "timestamp": "2026-09-01T09:31:03.339126"
+          "timestamp": "2026-08-31T12:53:10.591251"
         }
       ]
     }
