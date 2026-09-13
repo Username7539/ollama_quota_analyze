@@ -15,46 +15,46 @@ logs/output_glm-5.3-cloud.json
 
 === hit ===
   P1/cache hit:
-    5h:    delta=8.1%  rel_err=2.5%
+    5h:    delta=8.2%  rel_err=2.4%
     week:  delta=1.5%  rel_err=13.3%
   P2/cache hit:
-    5h:    delta=9.9%  rel_err=2.0%
-    week:  delta=1.7%  rel_err=11.8%
+    5h:    delta=8.3%  rel_err=2.4%
+    week:  delta=1.5%  rel_err=13.3%
   pooled (G=2):
-    5h:    sum=18.0%  rel_err=1.6%
-    week:  sum=3.2%  rel_err=8.8%
+    5h:    sum=16.5%  rel_err=1.7%
+    week:  sum=3.0%  rel_err=9.4%
 
 === output ===
   output/output probe:
-    5h:    delta=8.2%  rel_err=2.4%
+    5h:    delta=8.6%  rel_err=2.3%
     week:  delta=1.5%  rel_err=13.3%
   pooled (G=1):
-    5h:    sum=8.2%  rel_err=2.4%
+    5h:    sum=8.6%  rel_err=2.3%
     week:  sum=1.5%  rel_err=13.3%
 
 === linearity (miss) ===
-  P1: a=1.30e-05  delta5h=9.9%  total_pec=760994
-  P2: a=1.31e-05  delta5h=9.0%  total_pec=686626
+  P1: a=1.30e-05  delta5h=9.9%  total_pec=760992
+  P2: a=1.31e-05  delta5h=9.0%  total_pec=686624
   spread = 0.8%  err = 1.5%
   VERDICT: linear (spread < err)
 
 === linearity (hit) ===
-  P1: b=2.42e-06  delta5h=8.1%  total_pec=3348400
-  P2: b=2.40e-06  delta5h=9.9%  total_pec=4119756
-  spread = 0.7%  err = 1.6%
-  VERDICT: linear (spread < err)
+  P1: b=2.99e-06  delta5h=8.2%  total_pec=2739582
+  P2: b=2.42e-06  delta5h=8.3%  total_pec=3433120
+  spread = 21.3%  err = 1.7%
+  VERDICT: non-linear (spread > err)
 
 === ratio r = 5h / week ===
   miss: r=5.73  err=+/-9%  range=[5.23, 6.23]
-  hit: r=5.62  err=+/-9%  range=[5.12, 6.13]
-  output: r=5.47  err=+/-14%  range=[4.73, 6.21]
-  cross-probe: min=5.47 max=5.73 spread=0.26
+  hit: r=5.50  err=+/-10%  range=[4.97, 6.03]
+  output: r=5.73  err=+/-14%  range=[4.96, 6.51]
+  cross-probe: min=5.50 max=5.73 spread=0.23
   pooled: r=5.64  err=+/-6%
 
 === prices ($/1M tokens, from weekly quota) ===
-  b/a = 18.8%  (cache discount = 81.2%)
-  c/a = 3.28  (output vs input)
+  b/a = 21.3%  (cache discount = 78.7%)
+  c/a = 3.12  (output vs input)
 
   A = $0.105/1M  err=+/-9%  range=[$0.096, $0.114]
-  B = $0.020/1M  err=+/-9%  range=[$0.018, $0.021]
-  C = $0.343/1M  err=+/-13%  range=[$0.297, $0.389] ! The output token price was measured only with a small input context and may appear to be slightly higher when making requests with large input data.
+  B = $0.022/1M  err=+/-9%  range=[$0.020, $0.024] !!! In the collected cache hit data, there is a outlier. The cache hit price may be inflated compared to the actual value.
+  C = $0.327/1M  err=+/-13%  range=[$0.283, $0.371] ! The output token price was measured only with a small input context and may appear to be slightly higher when making requests with large input data.

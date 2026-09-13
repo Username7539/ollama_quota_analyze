@@ -1,0 +1,128 @@
+{
+  "metadata": {
+    "model": "glm-5.3:cloud",
+    "num_predict": 1,
+    "repeat_count": 5,
+    "timestamp": "2026-09-06T14:18:04.957070"
+  },
+  "groups": [
+    {
+      "text_label": "P1",
+      "group": "cache miss",
+      "num_predict": 1,
+      "cap": 100,
+      "q5h_before": 0,
+      "qweek_before": 20.5,
+      "q5h_after": 9.9,
+      "qweek_after": 22.2,
+      "delta5h": 9.9,
+      "deltaweek": 1.7,
+      "settle_delta5h": 0.0,
+      "settle_deltaweek": 0.0,
+      "valid5h": true,
+      "requests": [
+        {
+          "uuid": "7c04ce2d-ce22-425f-b55f-c067320ef9b9",
+          "prompt_eval_count": 152197,
+          "eval_count": 1,
+          "total_duration": 9831056673,
+          "q5h_before": 0,
+          "qweek_before": 20.5,
+          "q5h_after": 2.0,
+          "qweek_after": 20.8,
+          "delta5h": 2.0,
+          "deltaweek": 0.3,
+          "valid5h": true,
+          "timestamp": "2026-09-06T14:12:51.821849"
+        },
+        {
+          "uuid": "14504cd3-a2f3-4afb-ad9e-a1c0f1aec934",
+          "prompt_eval_count": 152197,
+          "eval_count": 1,
+          "total_duration": 10148411155,
+          "q5h_before": 2.0,
+          "qweek_before": 20.8,
+          "q5h_after": 4.0,
+          "qweek_after": 21.2,
+          "delta5h": 2.0,
+          "deltaweek": 0.4,
+          "valid5h": true,
+          "timestamp": "2026-09-06T14:13:02.977402"
+        },
+        {
+          "uuid": "0df5fdc3-7d32-4963-98a6-cc77a68c1f00",
+          "prompt_eval_count": 152200,
+          "eval_count": 1,
+          "total_duration": 9938660593,
+          "q5h_before": 4.0,
+          "qweek_before": 21.2,
+          "q5h_after": 5.9,
+          "qweek_after": 21.5,
+          "delta5h": 1.9,
+          "deltaweek": 0.3,
+          "valid5h": true,
+          "timestamp": "2026-09-06T14:13:13.748686"
+        },
+        {
+          "uuid": "b3677849-b74d-4458-a979-0f45e7b3c5ae",
+          "prompt_eval_count": 152200,
+          "eval_count": 1,
+          "total_duration": 10667265667,
+          "q5h_before": 5.9,
+          "qweek_before": 21.5,
+          "q5h_after": 7.9,
+          "qweek_after": 21.9,
+          "delta5h": 2.0,
+          "deltaweek": 0.4,
+          "valid5h": true,
+          "timestamp": "2026-09-06T14:13:25.204496"
+        },
+        {
+          "uuid": "39127257-36c0-4665-85ed-bd8552b527d3",
+          "prompt_eval_count": 152200,
+          "eval_count": 1,
+          "total_duration": 10059487283,
+          "q5h_before": 7.9,
+          "qweek_before": 21.9,
+          "q5h_after": 9.9,
+          "qweek_after": 22.2,
+          "delta5h": 2.0,
+          "deltaweek": 0.3,
+          "valid5h": true,
+          "timestamp": "2026-09-06T14:13:36.027680"
+        }
+      ]
+    },
+    {
+      "text_label": "P2",
+      "group": "cache miss",
+      "num_predict": 1,
+      "cap": 20,
+      "q5h_before": 18.0,
+      "qweek_before": 23.7,
+      "q5h_after": 27.0,
+      "qweek_after": 25.3,
+      "delta5h": 9.0,
+      "deltaweek": 1.6,
+      "settle_delta5h": 0.0,
+      "settle_deltaweek": 0.0,
+      "valid5h": true,
+      "requests": [
+        {
+          "uuid": "acbd9971-0ba7-4b2e-8511-e728702d597d",
+          "prompt_eval_count": 686626,
+          "eval_count": 1,
+          "total_duration": 75411783576,
+          "q5h_before": 18.0,
+          "qweek_before": 23.7,
+          "q5h_after": 27.0,
+          "qweek_after": 25.3,
+          "delta5h": 9.0,
+          "deltaweek": 1.6,
+          "valid5h": true,
+          "timestamp": "2026-09-06T14:16:37.174238"
+        }
+      ]
+    }
+  ]
+}
